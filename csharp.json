@@ -1,0 +1,150 @@
+{
+	// Place your snippets for csharp here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"Entitas Component": {
+		"prefix": "e_component",
+		"body": [
+		  "using Entitas;",
+		  "",
+		  "public sealed class $1 : IComponent {",
+		  "}"
+		],
+		"description": "Entitas Component Template"
+	  },
+	  "Entitas Feature": {
+		"prefix": "e_feature",
+		"body": [
+		  "using Entitas;",
+		  "",
+		  "public sealed class $1 : Feature {",
+		  "    public $1(Contexts contexts) {",
+		  "        // Add systems here",
+		  "    }",
+		  "}"
+		],
+		"description": "Entitas Feature Template"
+	  },
+	  "Entitas Execute System": {
+		"prefix": "e_execute",
+		"body": [
+		  "using Entitas;",
+		  "",
+		  "public class $1 : IExecuteSystem {",
+		  "    private Contexts _contexts;",
+		  "",
+		  "    public $1(Contexts contexts) {",
+		  "        _contexts = contexts;",
+		  "    }",
+		  "",
+		  "    public void Execute() {",
+		  "        // per-frame code goes here",
+		  "    }",
+		  "}"
+		],
+		"description": "Entitas Execute System Template"
+	  },
+	  "Entitas Cleanup System": {
+		"prefix": "e_cleanup",
+		"body": [
+		  "using Entitas;",
+		  "",
+		  "public class $1 : ICleanupSystem {",
+		  "    private Contexts _contexts;",
+		  "",
+		  "    public $1(Contexts contexts) {",
+		  "        _contexts = contexts;",
+		  "    }",
+		  "",
+		  "    public void Cleanup() {",
+		  "        // cleanup code here",
+		  "        // runs after every execute and reactive system has completed",
+		  "    }",
+		  "}"
+		],
+		"description": "Entitas Cleanup System Template"
+	  },
+	  "Entitas Initialize System": {
+		"prefix": "e_initalize",
+		"body": [
+		  "using Entitas;",
+		  "",
+		  "public class $1 : IInitializeSystem {",
+		  "    private Contexts _contexts;",
+		  "",
+		  "    public $1(Contexts contexts) {",
+		  "        _contexts = contexts;",
+		  "    }",
+		  "",
+		  "    public void Initialize() {",
+		  "        // Initialization code here",
+		  "    }",
+		  "}"
+		],
+		"description": "Entitas Initialize System Template"
+	  },
+	  "Entitas Reactive System": {
+		"prefix": "e_react",
+		"body": [
+		  "using Entitas;",
+		  "using System.Collections.Generic;",
+		  "",
+		  "public class $1 : ReactiveSystem<GameEntity> {",
+		  "    private Contexts _contexts;",
+		  "",
+		  "    public $1(Contexts contexts) : base(contexts.game) {",
+		  "        _contexts = contexts;",
+		  "    }",
+		  "",
+		  "    protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) {",
+		  "        return context.CreateCollector();",
+		  "    }",
+		  "",
+		  "    protected override bool Filter(GameEntity entity) {",
+		  "        throw new System.NotImplementedException();",
+		  "    }",
+		  "",
+		  "    protected override void Execute(List<GameEntity> entities) {",
+		  "        foreach (var e in entities) {",
+		  "            // do stuff to the matched entities",
+		  "        }",
+		  "    }",
+		  "}"
+		],
+		"description": "Entitas Reactive System Template"
+	  },
+	  "Entitas TearDown System": {
+		"prefix": "e_teardown",
+		"body": [
+		  "using Entitas;",
+		  "",
+		  "public class $1 : ITearDownSystem {",
+		  "    private Contexts _contexts;",
+		  "",
+		  "    public $1(Contexts contexts) {",
+		  "        _contexts = contexts;",
+		  "    }",
+		  "",
+		  "    public void TearDown() {",
+		  "        // Teardown code here",
+		  "    }",
+		  "}"
+		],
+		"description": "Entitas TearDown System Template"
+	  }
+	  
+	  
+	  
+	  
+}
+
