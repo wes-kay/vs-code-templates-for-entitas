@@ -10,10 +10,10 @@ VSCode port of: https://github.com/hazarartuner/jetbrains-live-templates-for-ent
 ## Abbreviations
 To generate template codes use the abbreviations below then press TAB for auto complete
 
-e_clean : CleanUp System
-e_comp : Component
-e_exec : Execute System
-e_feat : Feature
-e_init : Initialize System
-e_react : Reactive System
-e_tear : TearDown System
+- e_clean : CleanUp System
+- e_comp : Component
+- e_exec : Execute System
+- e_feat : Feature
+- e_init : Initialize System
+- e_react : Reactive System
+- e_tear : TearDown System
