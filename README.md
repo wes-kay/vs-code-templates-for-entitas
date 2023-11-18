@@ -1,2 +1,8 @@
 # vs-code-templates-for-entitas
-https://github.com/hazarartuner/jetbrains-live-templates-for-entitas
+VSCode port of: https://github.com/hazarartuner/jetbrains-live-templates-for-entitas for https://github.com/sschmid/Entitas
+
+
+- Open VS Code.
+- Go to the "File" menu and select "Preferences," then choose "User Snippets."
+- Select the CSharp for which you want to add the snippet. 
+- VS Code will open a JSON file where you can add the snippets.
